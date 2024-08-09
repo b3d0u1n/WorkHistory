@@ -1,0 +1,8 @@
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>The company settled on using multiple AWS accounts.  These accounts mapped to product classes and environments.  For example, front-end products had environments for development, testing, customer verification, staging and production.  The terraform for these environments was essentially the same.  In order to factor out the variables the team added a higher layer of abstraction using Terragrunt.  In the example above, the same terraform could be used for all five environments, the only difference was the environment specific parameter file.</p>
+</div>

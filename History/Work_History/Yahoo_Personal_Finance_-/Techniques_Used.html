@@ -1,0 +1,23 @@
+<h4 class="project-item third-color">
+	<i>Techniques Used</i>
+</h4>
+
+<div class="project-item-detail">
+	<p><b>Meta-programming</b></p>
+<p>The solution was implemented using C++ and the Loki meta programing library.</p>
+
+<p><b>Composability</b></p>
+<p>The various rules to match individual records were implemented as C++ functors.  These rules were organized into rule chains of decreasing strictness.  Chain processing for an individual record stopped at the first matching predicate or fell through the bottom of the chain as an unmatchable record.</p>
+
+<p><b>Recursion</b></p>
+<p>The code was implemented purely in header files.  The rule chains was generated using compiler side recursion using a technique of typelists provided by the Loki library.  This simplified rule configuration to a matter of editing a single entry in a header file.</p>
+<p>These approaches provided the following additional advantages.</p>
+	<ul><li>	Isolation</li></ul>
+	<blockquote>⁃	Each ‘rule’ was implemented as predicate and was not coupled</blockquote>
+	<ul><li>	Verification/Testing</li></ul>
+	<blockquote>⁃	Multiple rulesets could be compiled with different configurations to provide efficient side-by-side comparisons.</blockquote>
+	<ul><li>	Extensibilty</li></ul>
+	<blockquote>⁃	Unmatched records provided the basis for ever weaker rules - these could be added to the end of a rule chain, tested and accepted or rejected.</blockquote>
+
+
+</div>

@@ -1,0 +1,410 @@
+<hr>
+
+<h3 class="company first-color">SocialCode</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jun 2012 - Aug 2015 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Lead </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> caktus, cassandra, celery, graphite, jenkins, kafka, neo4j, redis, redshift, vagrant, zookeeper </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> erlang, java </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> chef, sql, tla+ </i></td>
+	</tr>
+
+
+</table>
+
+<h4 class="project-item third-color">
+	<i>Objectives</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>Provide infrastructure, named CoreData, to collect campaign metrics from various social networks.  Ensure that the acquired data is well understood and store this data in databases to serve use cases from research and product development.</p>
+</div><h4 class="project-item third-color">
+	<i>Responsibilities</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>Specify, design and implement the CoreData system.  I led the group of two engineers.  I was involved  This was a greenfield project.</p>
+
+<center>
+
+<p>
+<img src="SocialCode/Responsibilities.jpg" alt="" >
+</p>
+
+</center>
+</div><h4 class="project-item third-color">
+	<i>Key Challenges</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>The biggest challenge was interacting with stakeholders while designing, building and deploying the system.    </p>
+</div><h4 class="project-item third-color">
+	<i>Current State</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>Unknown, I left the company in 2015.</p>
+</div><hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	CoreData Crawler
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Provide a reliable mechanism for managing statistics crawling across the various social media sites used for ad campaigns.  Crawls should be easy to configure without impacting other ongoing crawls.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilities</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I implemented this system.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Key Challenges</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Design a simple configuration language to express crawl requirements across different social networks.  Provide an easy way to add new crawl endpoints, expose crawl progress on a per-vertical basis with fault tolerance and ease of debugging</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>The system was implemented in Erlang.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>A performant production ready implementation was provided.  </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>The company decided to stick with an earlier implementation relying on Celery and Django.  This was never deployed to production </p>
+</div>
+<hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	CoreData Gateway
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Provide an entry point receive datasets published by the CoreCrawler infrastructure.  Validate these data against registered schemas and publish valid data to the Kafka cluster.  Preserve a history of all data acquired by the company.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilites</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I was the sole implementer of the CoreData Gateway.  </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Key Challenges</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>In addition to schema validation The server was also a client to S3 and Kafka.  The interface needed to expose performance characteristics of the Kafka bus and provide detailed error messages.  </p>
+
+
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>An error dictionary was defined with codes so that the crawler infrastructure could programmatically respond to problems.  If the kafka clients were failing, publishing would be stopped, if validation errors for a data metric were failing crawling for this would pause until the change in expected output was analyzed and properly reflected in the schema validation phase.</p>
+<p>The REST interface </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>A stress tested system was deployed to production in less than two months.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Unknown</p>
+
+</div>
+<hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	Kafka Infrastructure
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Provide streaming access to campaign performance data with durability.  Support an arbitrary number of consumers on this data.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilities</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I implemented the Kafka cluster and was responsible for testing failure scenarios with downed partitions.  Performance testing and capacity planning were also addressed.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Key Challenges</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Ensuring that the interaction of Kafka with Zookeeper and the various failure modes was well understood by other members on the team.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I chose a 3-node cluster for our system.  The supporting Zookeeper cluster was also run on 3 nodes.  A main objective of the was to support the loss of one Amazon Availability Zone.  Each zone hosted one instance of Kafka broker and a Zookeeper node.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This infrastructure was delivered into production running in three Amazon Availability Zones.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This data bus was still running in production when I left the company.</p>
+</div>
+<hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	CoreData Data Transformation Pipeline
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Consume data published to Kafka queues by the CoreGateway infrastructure.  Transform this data for different use cases and database targets.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilites</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I was responsible for working on the specification and providing design review for this component. </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Key Challenges</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Several downstream databases needed to maintained, this pipeline needed to write subsets of the incoming data </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>The processing pipeline was implemented with Apache Storm.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>The essential functionality required to maintain the MySql and Redshift databases was deployed to production.  Additional work was under development to support Neo4J and Cassandra.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This pipeline was running in production at the time I left the company.</p>
+</div>
+<hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	CoreData Realtime Query Infrastructure
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Provide a query interface to access data published into the Kafka.  Enable end-to-end verification of CoreGateway publishing and Kafka cluster integrity.  Enable performance testing of the data bus.  This also provided a mechanism for product and research to explore new ideas.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilites</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I implemented this system.  </p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This subsystem provided a REST interface to a Kafka client.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This system was an essential component in QA testing of the data pipeline.  In addition to data integrity it provided a mechanism for testing latency on the databus.  The research team also leveraged this to research potential new features.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This system was running in production when I left the company.</p>
+</div>
+<hr>
+<!--<h4 class="sub-project first-color">-->
+<h4 class="sub-project fourth-color">
+	CoreData Media Metrics Explorer
+</h4>
+
+<!-- Dates: 2012 - 2015
+</br>Role: Lead -->
+	
+<!--  -->
+
+<!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Objectives</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Provide access to campaign statistics published by third party social networks.  Product teams could define calculations over the raw statistics to quickly generate client specific data sets.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Responsibilites</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>I defined the DSL for this REST interface.  Users could install simple formulas to calculate compound metrics.  The interface hosted an expression parser to calculate these additional metrics on the fly.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Key Challenges</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Allow user’s, primarily product, to access data using their own naming.  The system needed to support easy aliasing of campaign metrics and compound metrics specified by the product team.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Technical Details</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>Examples of interacting with this interface are here courtesy of Dave Rogers who was the principal implementer: </p>
+	<ul><li>	<a href="x-devonthink-item://B1E59B81-0389-4152-A62F-838F1572FF85">lunchbox-api-demo-formulas</a>.  </li>
+	<li>	<a href="x-devonthink-item://EEA65414-6214-40BA-BDCC-53C5A1DF40A1">lunchbox-api-demo-metrics</a></li></ul>
+
+<p>This interface was implemented in TastyPie <a href="https://tastypieapi.org">http://tastypieapi.org</a> and was a solid effort to follow the HATEOS architectural style.   A principle integration point was the Facebook OpenGraph API which followed this pattern as well.  Critical inspiration came from: </p>
+	<ul><li>	<a href="https://www.amazon.com/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829">https://www.amazon.com/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829</a>.  </li>
+	<li>	 <a href="https://www.amazon.com/REST-Design-Rulebook-Mark-Masse/dp/1449310508">https://www.amazon.com/REST-Design-Rulebook-Mark-Masse/dp/1449310508</a>.</li></ul>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Project Deliverables</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This service was delivered to production along with training videos.  It was accessible to all employees in the company.</p>
+</div><!--<h5 class="sub-project-item second-color">-->
+<h5 class="sub-project-item fifth-color">
+		<i>Current State</i>
+</h5>
+
+<div class="sub-project-detail">
+	<p>This was service was still running in production when I left the company.</p>
+</div>
+

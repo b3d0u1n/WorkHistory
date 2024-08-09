@@ -1,0 +1,108 @@
+<hr>
+
+<h3 class="company first-color">Yahoo! WOO</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Nov 2010 - Jun 2011 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Senior Technical Yahoo! </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> hadoop, hbase, hdfs </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> java, pig, tla+ </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> oozie </i></td>
+	</tr>
+
+
+</table>
+
+<h4 class="project-item third-color">
+	<i>Objectives</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>Generate an entity graph and update this regularly by processing authoritative data feeds from Twitter, Flickr, Yahoo! Search, etc.  Generate ranking indexes based on graph entities.</p>
+</div><h4 class="project-item third-color">
+	<i>Responsibilites</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>I helped implement a data scoring pipeline designed by the data research team.  This was a dataflow graph of calculations for conditional probabilities, entropy, cosine similarity, kl divergence was run on a Hadoop cluster.  The processing output was a new search ranking which was published to the indexers.</p>
+</div><h4 class="project-item third-color">
+	<i>Key Challenges</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>The research code was written in Java.  Each statistic was a separate class and these needed to be run on a Hadoop cluster to support the volume of data.  This required moving the functions into the PIG programming language as User Defined Functions (UDF’s).  Since there were data dependencies between several of these functions the integration needed to be deployed as a data-flow-graph.  This was implemented in Oozie.</p>
+</div><h4 class="project-item third-color">
+	<i>Technical Details</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>At the time this work was implemented the failure of a single Pig Function would fail the entire Oozie workflow.  Calculations were running on a 4K node cluster making it infeasible to identify which UDF instance was failing on which input.  I could determine which stage of the workflow was failing.  With this I studied the implementation of the function and estimated that the function was quartic ( n^4).  Was I right ?  One of the data sets consumed with this function were queries run against the Yahoo! Search engine … and yes there were queries with more than 100 terms.  Rejecting queries with more than 20 terms ended the problem.</p>
+</div><h4 class="project-item third-color">
+	<i>Techniques Used</i>
+</h4>
+
+<div class="project-item-detail">
+	<blockquote>	•	Estimating algorithmic complexity for functions written/published from different teams</blockquote>
+</div><h4 class="project-item third-color">
+	<i>Project Deliverables</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>The data flow graph of statistical calculations provided by the Research Team was delivered as an Oozie controlled workflow.</p>
+</div><h4 class="project-item third-color">
+	<i>Current State</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>Unknown.  I left Yahoo! In 2011 and this was an internal project active at the time of my departure.</p>
+</div><h4 class="project-item">
+	<i>Colleagues</i>
+</h4>
+
+<table><tr>
+	<td>
+		Rahul Aggarwal:
+	</td>
+	<td>
+		<a href="https://www.linkedin.com/in/rahula1/">https://www.linkedin.com/in/rahula1/</a>
+	</td>
+</tr>
+
+</table>
+
+

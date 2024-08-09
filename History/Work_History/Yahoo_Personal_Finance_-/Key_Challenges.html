@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Key Challenges</title>
+        <style>
+            
+body{
+    font-family: "Ideal Sans Ssm Book",HelveticaNeue,Helvetica,Arial,sans-serif;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    line-height: 1.4;
+    }
+ 
+table {
+    margin: 2em 0;
+    font-size: 0.9em;
+    border: 1px solid #888888;
+}
+
+td {
+	padding: 0.5em;
+}   
+
+img{
+    width: 100%;
+}
+        </style>
+    </head>
+    <body>
+        <p>Yodlee provided the backend scraping service, we provided account linking to a single Yahoo! ID.  Users were able to link credit card accounts, brokerage accounts, domestic and foreign bank accounts. Yodlee provided a rolling history without unique transaction IDS.  This was a thirty day view of transactions with three fields: transaction date, transaction description, amount.    All three fields for a financial event could change in a subsequent crawl.  For example, the date would advance after tip reconciliation, the amount would increase after tip reconciliation, and the description would often change as additional description was provided by the institution.  </p>
+<p>Yahoo!’s service provided a continuous history, each new data set needed to be merged into the existing history.  The challenge was to identify the subset of incoming data that was already stored and reconcile these records.  I needed to identify a merge window, with an incoming merge set and a historical merge set to reconcile, new records were prepended to the head of the history.</p>
+<p>Yahoo! Had started to incorporate MySql more extensively.  I needed to migrate encrypted user histories from a proprietary data storage system into a MySql database.  The transactions continued to be stored in an encrypted form.  The new database made it feasible to expose non-PII metadata such as creation time, last modified time, and a dirty bit ( indicating a soft-delete of a transaction ).</p>
+    </body>
+</html>

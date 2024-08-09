@@ -1,0 +1,24 @@
+<h4 class="project-item third-color">
+	<i>Key Challenges</i>
+</h4>
+
+<div class="project-item-detail">
+	<p>The system was designed to support several deployment scenarios:</p>
+	<ul><li>	Clean Installation</li>
+	<li>	Replacement upgrade</li></ul>
+	<blockquote>⁃	Deploy a new tier with the desired capacity and configurations</blockquote>
+	<blockquote>⁃	Cut-over to the new tier and release resources on the deprecated tier</blockquote>
+	<blockquote>⁃	Return deprecated hardware to the machine pool</blockquote>
+	<ul><li>	Rolling upgrade</li></ul>
+	<blockquote>⁃	Remove a subset of machines from active serving in the tier and upgrade</blockquote>
+	<blockquote>⁃	Enable newly provisioned machines and repeat sequence until all machines are upgraded</blockquote>
+	<ul><li>	Deploy new services</li></ul>
+	<blockquote>⁃	In some cases the architecture will change and the upgrade is more  accurately described as shifting traffic to a new service. This can be viewed as an extreme case of the Replacement case, in that Replacement is really a per Tier concept, whereas this upgrade is on a Service as a whole.</blockquote>
+	<ul><li>	Break/Fix</li></ul>
+	<blockquote>⁃	Automated provisioning of hardware to replace broken hardware, subject to security and rate-limiting.</blockquote>
+	<ul><li>	Exceptions/Rollback</li></ul>
+	<blockquote>⁃	In the case where some error occurs during or after the upgrade, the SE determines:</blockquote>
+	<blockquote>1)	Whether the error is systemic across the tier(s). If it is, the whole deployment is rolled back.  </blockquote>
+	<blockquote>2)	Whether the error affects isolated hosts. If so the SE determines whether to take the hosts out of rotation, which would occur if the number affected is small, or roll back if the number affected is large. (Except in the case of hardware failure, such failures indicate a failure on the part of the CSI to uniformly deploy. Nonetheless, we should provide a means of dealing with the case.)</blockquote>
+
+</div>

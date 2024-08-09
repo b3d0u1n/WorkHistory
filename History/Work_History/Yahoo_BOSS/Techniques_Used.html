@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Techniques Used</title>
+        <style>
+            
+body{
+    font-family: "Ideal Sans Ssm Book",HelveticaNeue,Helvetica,Arial,sans-serif;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    line-height: 1.4;
+    }
+ 
+table {
+    margin: 2em 0;
+    font-size: 0.9em;
+    border: 1px solid #888888;
+}
+
+td {
+	padding: 0.5em;
+}   
+
+img{
+    width: 100%;
+}
+        </style>
+    </head>
+    <body>
+        <p>Erlang provides the concept of a node.  These nodes run on different hosts and interact as a distributed system.  There is support for implementing nodes in different languages so that heterogenous code can interact as if Erlang is the sole implementation language.  We used c-nodes to embed Erlang in apache, for the Java code components we used j-nodes.  The workflow state machine was implemented with the Erlang gen_fsm behavior provided in the OTP standard library.  This behavior is now superseded by gen_statem.  </p>
+<p>RabbitMQ was used as the bus for messaging between the processing components and the VESPA and Inktomi search components.  Incremental progress was marked in the state machine.  Various components were invoked in defined orders and were all implemented as non-blocking asynchronous operations.</p>
+<p>Data sets were published in XML and processed with a SAX parser to allow for arbitrarily large multipart uploads.</p>
+
+    </body>
+</html>

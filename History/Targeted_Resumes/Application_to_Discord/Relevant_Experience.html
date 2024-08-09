@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Relevant Experience</title>
+      <style type="text/css">
+        body {
+	         font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+			
+         /* palette-twelve */
+	
+.first-color {  
+	color: #38a3a5; 
+}                 
+                  
+.second-color {   
+	color: #57cc99;
+}               
+              
+.third-color { 
+	color: #80ed99; 
+}                 
+                  
+.fourth-color {  
+	color: #c7f9cc; 
+}
+
+.fifth-color {  
+	color: #22577a; 
+}
+
+      </style>
+	</head>
+	<body>
+		<hr>
+				<center class="first-color"><h1><b>Mark Zweifel</b></h1></center>
+				<center><h2 class="second-color">mark.zweifel@hey.com</h2></center>
+	   <hr>
+		<h2 class="third-color">
+			Relevant Experience
+		</h2>
+			<p>I have delivered solutions with Erlang for three projects.  The first was a salvage operation.  I was on a team that ported <a href="https://del.icio.us">del.icio.us</a> to a new bespoke federated database system.  A critical facet of this job was managing the migration from the legacy databases which I was responsible for.  The success of this was presented in a talk delivered to the Commercial Users of Functional Programming (CUFP).  </p>
+<p>Following from this I was also able to start building up a group of interested engineers.  Erlang provided useful capabilities for a second Yahoo! Project, Build your Own Search Service ( BOSS ).  During this time I advocated for Erlang in the wider organization and worked with the OTP team at Ericsson to host several workshops and presentations to the wider engineering organization.  I also worked with Erlang Solutions and presented some results of our work at the Erlang Factory.  </p>
+
+<p>The third solution was a crawler designed to pull social media statistics from various social media partners such as Facebook and Twitter.</p>
+
+<p><b>Presentations:</b></p>
+
+	<ul><li>	CUFP 2008: http://cufp.org/archive/2008/slides/GerakinesNick.pdf</li>
+	<li>	Erlang Factory 2010: <a href="https://vimeo.com/12806020">https://vimeo.com/12806020</a></li></ul>
+
+
+
+		<hr>
+
+<h3 class="first-color">Delicious Migration</h3>
+
+<p>I was responsible for guaranteeing reliable migration of the legacy data to the new data architecture. I implemented the sql query generator for the new federated system. I also implemented the migration system to support bi-directional migration between the original infrastructure and the new federated database layer.</p>
+<p>There was existing legacy perl code which managed the various ‘special cases’ in the original data.  This code was running in production and needed to be incorporated into the migration logic.  At the same time this needed to be runnable in a parallel concurrent environment.  Erlang was used for the concurrency layer.  The production interface provided a log table of all transactions executed in production.  This ‘queue’ was consumed by migrator nodes.  The log tracked CREATE, UPDATE, DELETE operations for user histories.  A migrator node would consume the command history for a given user and replay the command sequence against the new federation layer.</p>
+<p>There were multiple migrator nodes and each was assigned the set of users that mapped to a particular federation cluster.  These nodes needed to monitor host memory to control the flow of reads from the queue based on the performance of the data scrubbing and write operations.  This was achieved by monitoring local memory and adjusting read rates with a backoff.  Each record ( a url with tags and comments etc. ) was passed through the perl scrubbing code in the Erlang environment.  This leveraged a perl marshaling layer to pass the Erlang representation read from the queue into perl accessible formats and to convert the ‘scrubbed’ data back into Erlang types before writing them to the federation layer.  All operations were logged in a distributed in-memory database (implemented with mensia) which made it easy to track progress and verify extremely low failure rates.  I was able to run 100’s of perl interpreters on a fleet boxes to increase the throughput of the overall migration process.</p>
+<p>The query generator was implemented using the BOOST Spirit Recursive Descent Parser Generator.</p>
+
+
+<hr>
+
+<h3 class="first-color">BOSS Hosted Search</h3>
+
+<p>The backend for this service was deployed as a service oriented system with RabbitMQ as the bus.  The components were written in different languages, Java, C, C++ and Erlang interacted with MySQL, VESPA, and the larger web crawling infrastructure.  Coordination of schema validation, vertical search instance configuration and the processing of uploaded structured data was managed by a central workflow manager implemented as a distributed state machine.  Inspectability of the incremental progress through the system allowed the UI to publish progress as data was loaded, or query result sets were fetched and merged from VESPA and the Web crawling infrastructure.  RabbitMQ as a message bus for command and data channels.  This allowed us to leverage the various components and developers could work with their preferred technology.  </p>
+<p>The VESPA vertical search engine technology is in the same family as Lucene and SOLR.   Once a published schema was validated, a vertical search index was created.  Data feeds published to the index were validated against the inferred types in the published schema before being loaded into the search engine.  The product allowed 3rd parties to leverage the Yahoo!/Inktomi search engine.  Additionally, users could define their own structured data schema which allowed them to publish structured data and host it in a bespoke Vespa instance.  Query results could be a blend of structured results and open search results returned by the Yahoo!/Inktomi search API. </p>
+
+
+
+<hr>
+
+<h3 class="first-color">SocialCode Corecrawler</h3>
+
+<p>I was the lead engineer on the data acquisition and publishing subsystem for SocialCode.  The crawler was designed to consume campaign metrics from a various social networks.  The traversals were configured via a small DSL and supported live reconfiguration.  The Crawler pushed data to a gateway entry point that validated the JSON datasets before publishing them to a Kafka bus.</p>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Work History</title>
+      <style type="text/css">
+			h1 { color: #e95e41 }
+			
+         /* palette-eighteen */
+	
+.first-color { 
+	color: #083d77; 
+}
+	
+.second-color { 
+	color: #f95738; 
+}
+
+.third-color { 
+	color: #f4d35e; 
+}
+
+.fourth-color { 
+	color: #ee964b; 
+}
+
+.fifth-color {  
+	color: #d8c99b; 
+}
+
+      </style>
+	</head>
+	<body>
+		<h1>
+			Work History
+		</h1>
+		
+
+		<hr>
+
+<h3 class="company first-color">Sabbatical</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jan 2023 - Jun 2024 </i> </td>
+
+	</tr>
+ 
+
+
+
+
+
+
+ 
+
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">HouseCanary</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Apr 2017 - Aug 2022 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Lead, Principal Engineer </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> aws, docker, freeipa, hologram, okta, packer, prometheus, sourcegraph, vagrant, virtualbox </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> bash, python </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> ansible, make, sql, terraform </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">SentientEnergy</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Aug 2015 - Feb 2017 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Team Lead </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> aws, jenkins, mysql, nagios, packer, postgres, vagrant, virtualbox, vsphere </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> java, python </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> ansible, make, sql </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">SocialCode</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jun 2012 - Aug 2015 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Lead </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> caktus, cassandra, celery, graphite, jenkins, kafka, neo4j, redis, redshift, vagrant, zookeeper </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> erlang, java </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> chef, make, sql, tla+ </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">Digg</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jun 2011 - Jun 2012 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Developer </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> cassandra, celery, Django, ganglia, hadoop, hbase, hive, hudson, jenkins, memcache, mongodb, mysql, open-tsdb, redis, solr, thrift </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> python </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> chef, puppet, sql </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">Yahoo! WOO</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Nov 2010 - Jun 2011 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Senior Technical Yahoo! </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> hadoop, hbase, hdfs </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> java, pig, tla+ </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> oozie </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">Yahoo! Cluster Management</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Dec 2009 - Oct 2010 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Senior Technical Yahoo! </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> zookeeper </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> java, perl, tla+ </i></td>
+	</tr>
+ 
+
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">Yahoo! BOSS</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jun 2008 - Nov 2009 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Lead </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> apache, rabbitmq, vespa </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> c, c++, erlang, java </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> make, sql </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+<h3 class="company first-color">Delicious</h3>
+
+<table cellspacing="0">
+
+
+   <tr>
+		<td class="second-color"> Dates: </td>
+
+
+<td> <i> Jun 2006 - Jun 2008 </i> </td>
+
+	</tr>
+ 
+
+
+
+   <tr>
+		<td class="second-color"> Role: </td>
+
+   	<td> <i> Developer </i> </td>
+   </tr>
+
+
+
+   <tr>
+		<td class="second-color"> Technologies: </td>	
+		<td> <i> apache, mysql </i> </td>
+	</tr>
+
+
+
+   <tr>
+		<td class="second-color">Programming Languages: </td>
+
+		<td> <i> c++, erlang, perl </i></td>
+	</tr>
+ 
+
+
+   <tr>
+		<td class="second-color">DSLs: </td>
+
+		<td> <i> make, sql </i></td>
+	</tr>
+
+
+</table>
+
+
+<hr>
+
+	</body>
+</html>
+
+		<hr>
+		</br>
+		Full Resume:
+	</body>
+</html>
