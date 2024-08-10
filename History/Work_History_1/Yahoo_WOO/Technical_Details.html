@@ -1,7 +1,0 @@
-<h4 class="project-item third-color">
-	<i>Technical Details</i>
-</h4>
-
-<div class="project-item-detail">
-	<p>At the time this work was implemented the failure of a single Pig Function would fail the entire Oozie workflow.  Calculations were running on a 4K node cluster making it infeasible to identify which UDF instance was failing on which input.  I could determine which stage of the workflow was failing.  With this I studied the implementation of the function and estimated that the function was quartic ( n^4).  Was I right ?  One of the data sets consumed with this function were queries run against the Yahoo! Search engine … and yes there were queries with more than 100 terms.  Rejecting queries with more than 20 terms ended the problem.</p>
-</div>

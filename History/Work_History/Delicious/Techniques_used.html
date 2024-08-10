@@ -1,9 +1,0 @@
-<h4 class="project-item third-color">
-	<i>Techniques used</i>
-</h4>
-
-<div class="project-item-detail">
-	<p>There was existing legacy perl code which managed the various ‘special cases’ in the original data.  This code was running in production and needed to be incorporated into the migration logic.  At the same time this needed to be runnable in a parallel concurrent environment.  Erlang was used for the concurrency layer.  The production interface provided a log table of all transactions executed in production.  This ‘queue’ was consumed by migrator nodes.  The log tracked CREATE, UPDATE, DELETE operations for user histories.  A migrator node would consume the command history for a given user and replay the command sequence against the new federation layer.</p>
-<p>There were multiple migrator nodes and each was assigned the set of users that mapped to a particular federation cluster.  These nodes needed to monitor host memory to slow down reads from the queue based on the performance characteristics of the data scrubbing and write operations.  This was done by monitoring local memory and adjusting read rates with a backoff.  Each record ( a url with tags and comments etc. ) was passed through the perl scrubbing code in the Erlang environment.  This leveraged a perl marshaling layer to pass the Erlang representation read from the queue into perl accessible formats and to convert the ‘scrubbed’ data back into Erlang types before writing them to the federation layer.  All operations were logged in a distributed in-memory database which made it easy to track progress and verify extremely low failure rates.  I was able to run 100’s of perl interpreters on a fleet boxes to increase the throughput of the overall migration process.</p>
-<p>The query generator was implemented using the BOOST Spirit Recursive Descent Parser Generator.</p>
-</div>
